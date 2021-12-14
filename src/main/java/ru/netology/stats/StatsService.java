@@ -41,9 +41,10 @@ public class StatsService {
 
     public int calculateMediumQuantityMonthMin(int[] sales) {
         int month = 0;
+        int averageSum = calculateAverageSum(sales);
 
         for (int sale : sales) {
-            if (sale > calculateAverageSum(sales)){
+            if (sale > averageSum){
                 month += 1;
             }
         }
@@ -52,9 +53,10 @@ public class StatsService {
 
     public int calculateMediumQuantityMonthMax(int[] sales) {
         int month = 0;
+        int averageSum = calculateAverageSum(sales);
 
         for (int sale : sales) {
-            if (sale < calculateAverageSum(sales)) {
+            if (sale < averageSum) {
                 month += 1;
             }
         }
